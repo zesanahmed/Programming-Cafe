@@ -14,6 +14,9 @@ const Cafe = () => {
     }, []);
 
 
+    const [time, setTime] = useState(0);
+    const countTime = () => setTime((time) => time + 5);
+
     return (
         <div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 m-8">
@@ -21,12 +24,13 @@ const Cafe = () => {
                     {
                         blogs.map(blog => <Blog
                             key={blog.id}
-                            blog={blog}>
+                            blog={blog}
+                            countTime={countTime}>
                         </Blog>)
                     }
                 </div>
                 <div className="col-span-1">
-                    <Bookmark></Bookmark>
+                    <Bookmark time={time}></Bookmark>
                 </div>
             </div>
         </div>

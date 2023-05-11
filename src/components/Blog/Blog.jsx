@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
@@ -19,14 +19,14 @@ const Blog = (props) => {
                         </div>
                     </div>
                     <div className='basis-1/4 flex gap-3'>
-                        <p className='align-middle'>{readingTime}</p>
-                        <button className='btn'>
+                        <p className=''>{readingTime}</p>
+                        <div onClick={props.countTime} className='btn'>
                             <FontAwesomeIcon icon={faBookmark} />
-                        </button>
+                        </div>
                     </div>
                 </div>
                 <h2 className='text-3xl font-bold my-4'>{title}</h2>
-                <a className='link' href="">Mark as read</a>
+                <a className='link'>Mark as read</a>
             </div>
         </div>
     );

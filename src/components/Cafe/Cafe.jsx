@@ -14,13 +14,17 @@ const Cafe = () => {
     }, []);
 
 
+
+
     const [time, setTime] = useState(0);
     const countTime = () => setTime((time) => time + 5);
+
+
 
     return (
         <div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 m-8">
-                <div className="col-span-2">
+                <div className="w-full lg:col-span-2">
                     {
                         blogs.map(blog => <Blog
                             key={blog.id}
